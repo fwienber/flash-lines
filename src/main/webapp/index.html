@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Jangaroo Flash Example</title>
+    <style type="text/css">
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body, #stage {
+        margin: 0;
+        padding: 0;
+        background-color: #869CA7;
+      }
+      #flashcontent {
+        position: absolute;
+        top: 0;
+        left: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage">
+      Jangaroo flash demo not (yet) loaded
+    </div>
+
+    <p>Download <a href="jangaroo-example-flash-lines-src.zip">source</a></p>
+
+    <script type="text/javascript" src="scripts/jangaroo-runtime.js"></script>
+    <script type="text/javascript" src="scripts/jangaroo-browser.js"></script>
+    <script type="text/javascript" src="scripts/jooflash-native.js"></script>
+    <script type="text/javascript" src="scripts/jooflash.js"></script>
+    <script type="text/javascript">
+      joo.classLoader.run(
+              "joo.flash.Run",
+              "stage",
+              "Main");
+    </script>
+
+    <div id="flashcontent">
+      no flash
+    </div>
+    <script type="text/javascript" src="http://lab.andre-michelle.com/wp-content/themes/layoff/swfobject.js"></script>
+    <script type="text/javascript"> 
+      var so = new SWFObject(
+              "http://lab.andre-michelle.com/swf/f9/lines/Main.swf",
+              "flashmovie",
+              "384",
+              "384",
+              "10"
+              );
+      so.addParam( "base", "" );
+      so.addParam( "wmode", "" );
+      so.addParam( "AllowScriptAccess", "always" );
+      so.write("flashcontent");
+    </script> 
+
+    <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+      if (window._gat) {
+        var pageTracker = _gat._getTracker("UA-5024797-1");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+      }
+    </script>
+
+  </body>
+</html>

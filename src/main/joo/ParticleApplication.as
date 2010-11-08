@@ -14,6 +14,10 @@ package
 	import flash.media.SoundChannel;
 	import flash.media.SoundTransform;
 
+	/**
+	 * @author Andre Michelle, http://lab.andre-michelle.com/lines
+	 * Adapted for Jangaroo by Frank Wienberg (FWI).
+	 */
 	public class ParticleApplication extends Sprite
 	{
 		static public const WIDTH: int = 384;
@@ -102,7 +106,8 @@ package
 			
 			for each( p0 in particles )
 			{
-				shape.graphics.moveTo( p0.sx, p0.sy );
+				shape.graphics.moveTo( p0.sx + (WIDTH >> 1), p0.sy + (HEIGHT >> 1));
+//				shape.graphics.moveTo( p0.sx, p0.sy );
 				
 				p0.vx -= p0.sx / forceX;
 				p0.vy -= p0.sy / forceY;
@@ -110,10 +115,13 @@ package
 				p0.sx += p0.vx;
 				p0.sy += p0.vy;
 				
-				shape.graphics.lineTo( p0.sx, p0.sy );
+				shape.graphics.lineTo( p0.sx + (WIDTH >> 1), p0.sy + (HEIGHT >> 1));
+//				shape.graphics.lineTo( p0.sx, p0.sy );
 			}
 			
-			bitmapData.draw( shape, new Matrix( 1, 0, 0, 1, WIDTH >> 1, HEIGHT >> 1 ) );
+			// FWI: transform on drawing, not on blitting into the bitmap:
+//			bitmapData.draw( shape, new Matrix( 1, 0, 0, 1, WIDTH >> 1, HEIGHT >> 1 ) );
+			bitmapData.draw( shape );
 		}
 	}
 }
