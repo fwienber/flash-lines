@@ -13,11 +13,11 @@ Getting started with Jangaroo Flash Development in ten steps:
 3. Press the "Downloads" button above
 4. Download .zip or .tar.gz
 5. unpack into any directory
-6. cd into fwienber-flash-lines-xxxxxxx (where xxxxxxx is the version you downloaded)
-7. mvn package
+6. `cd` into fwienber-flash-lines-xxxxxxx (where xxxxxxx is the version you downloaded)
+7. `mvn package`
 8. (the whole Java universe downloads, please be patient)
-9. start target\flash-lines-0.8.0-SNAPSHOT\index.html (do not use IE < 9)
-10. edit the source under src\main\joo with your favorite AS3 IDE, then mvn package again (quite fast
+9. start `target\flash-lines-0.8.0-SNAPSHOT\index.html` (do not use IE < 9)
+10. edit the source under `src\main\joo` with your favorite AS3 IDE, then `mvn package` again (quite fast
 this time!), reload in the browser (may have to clear browser cache first)
 
 The AS3 source code is compiled to JavaScript with the Jangaroo compiler, using the Jangaroo Flash Library
