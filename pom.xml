@@ -4,7 +4,7 @@
 
   <artifactId>flash-lines</artifactId>
   <groupId>net.jangaroo.flash.examples</groupId>
-  <version>0.8.0-SNAPSHOT</version>
+  <version>0.8.5-SNAPSHOT</version>
 
   <packaging>war</packaging>
 
@@ -39,27 +39,19 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jangaroo_version>0.8.0</jangaroo_version>
-    <jangaroo_libs_version>0.8.1</jangaroo_libs_version>
+    <jangaroo_version>0.8.3</jangaroo_version>
+    <jangaroo_libs_version>0.8.5</jangaroo_libs_version>
   </properties>
 
   <build>
     <sourceDirectory>src/main/joo</sourceDirectory>
-    <outputDirectory>target/jangaroo-output</outputDirectory>
 
     <plugins>
-      <!-- Register the packaging type "jangaroo". -->
-      <plugin>
-        <groupId>net.jangaroo</groupId>
-        <artifactId>jangaroo-lifecycle</artifactId>
-        <version>${jangaroo_version}</version>
-        <extensions>true</extensions>
-      </plugin>
-
       <!-- Use the Jangaroo compiler in "war mode". -->
       <plugin>
         <groupId>net.jangaroo</groupId>
         <artifactId>jangaroo-maven-plugin</artifactId>
+        <extensions>true</extensions>
         <version>${jangaroo_version}</version>
         <executions>
           <execution>
